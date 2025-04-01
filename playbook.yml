@@ -1,0 +1,9 @@
+# vim: set filetype=yaml.ansible:
+---
+- name: Ping hosts
+  hosts:
+    - localhost
+  tasks:
+    - name: Ping hosts
+      ansible.builtin.ping:
+        data: lmao
