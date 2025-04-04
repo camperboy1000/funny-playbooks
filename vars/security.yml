@@ -1,0 +1,8 @@
+# vim: set filetype=yaml:
+---
+# Most competitions use password to score SSH
+security_ssh_password_authentication: "yes"
+security_autoupdate_enabled: true
+security_fail2ban_enabled: true
+security_ssh_allowed_users: []
+security_ssh_allowed_groups: []

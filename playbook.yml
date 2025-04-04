@@ -18,8 +18,22 @@
         state: present
         update_cache: true
 
+- name: Lock down box
+  become: true
+  tags:
+    - security
+    - prison
+  hosts:
+    - localhost
+  roles:
+    - geerlingguy.security
+  vars_files:
+    - vars/security.yml
+
 - name: Setup SSH Prison
   become: true
+  tags:
+    - prison
   hosts:
     - localhost
   roles:
