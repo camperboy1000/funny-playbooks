@@ -1,0 +1,11 @@
+# vim: set filetype=yaml.ansible:
+---
+roles:
+  - name: geerlingguy.security
+    version: 3.0.0
+
+  - name: geerlingguy.firewall
+    version: 2.6.0
+
+  - name: geerlingguy.ssh-chroot-jail
+    version: 2.1.2

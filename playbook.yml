@@ -1,9 +1,28 @@
 # vim: set filetype=yaml.ansible:
 ---
-- name: Ping hosts
+- name: Install tools
   hosts:
     - localhost
   tasks:
-    - name: Ping hosts
-      ansible.builtin.ping:
-        data: lmao
+    - name: Install packages
+      become: true
+      ansible.builtin.apt:
+        name:
+          - apt-file
+          - btop
+          - htop
+          - locate
+          - lsof
+          - nano
+          - vim
+        state: present
+        update_cache: true
+
+- name: Setup SSH Prison
+  become: true
+  hosts:
+    - localhost
+  roles:
+    - geerlingguy.ssh-chroot-jail
+  vars_files:
+    - vars/prison.yml
