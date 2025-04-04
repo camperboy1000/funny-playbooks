@@ -20,7 +20,7 @@ sudo apt-get update
 
 # Reinstall system packages incase they are backdoored
 # shellcheck disable=SC2046
-sudo apt-get reinstall -y coreutils bash openssh-server openssh-client net-tools sudo \
+sudo apt-get reinstall -y coreutils passwd bash openssh-server openssh-client net-tools sudo \
   $(dpkg --get-selections | grep -E '^(linux|systemd|python3)' | awk '{print $1}')
 
 # Install pipx
