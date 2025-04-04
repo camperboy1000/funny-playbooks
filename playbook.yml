@@ -1,6 +1,6 @@
 # vim: set filetype=yaml.ansible:
 ---
-- name: Install tools
+- name: Setup box
   hosts:
     - localhost
   tasks:
@@ -10,6 +10,7 @@
         name:
           - apt-file
           - btop
+          - ed
           - htop
           - locate
           - lsof
@@ -17,6 +18,17 @@
           - vim
         state: present
         update_cache: true
+    - name: Ensure user
+      become: true
+      ansible.builtin.user:
+        name: dingus
+        state: present
+        groups:
+          - sudo
+        create_home: true
+        home: /home/dingus
+        shell: /bin/bash
+        comment: Meow
 
 - name: Lock down box
   become: true
@@ -40,3 +52,15 @@
     - geerlingguy.ssh-chroot-jail
   vars_files:
     - vars/prison.yml
+
+- name: Ensure firewall
+  become: true
+  tags:
+    - firewall
+  hosts:
+    - localhost
+  roles:
+    - geerlingguy.firewall
+  vars_files:
+    - vars/firewall.yml
+# Any additional tasks can go below here

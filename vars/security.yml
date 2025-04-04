@@ -1,4 +1,4 @@
-# vim: set filetype=yaml:
+# vim: set filetype=yaml.ansible:
 ---
 # Most competitions use password to score SSH
 security_ssh_password_authentication: "yes"

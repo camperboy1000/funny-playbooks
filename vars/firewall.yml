@@ -1,0 +1,16 @@
+# vim: set filetype=yaml.ansible:
+---
+firewall_state: started
+# One bad rule will ruin your day
+firewall_enabled_at_boot: false
+firewall_flush_rules_and_chains: true
+firewall_allowed_tcp_ports:
+  - "22"
+firewall_allowed_udp_ports: []
+firewall_forwarded_tcp_ports: []
+#  - { src: "22", dest: "2222" }
+firewall_forwarded_udp_ports: []
+firewall_additional_rules: []
+#  - "iptables -A INPUT -p tcp --dport 4949 -s 167.89.89.18 -j ACCEPT"
+firewall_disable_firewalld: false
+firewall_disable_ufw: false

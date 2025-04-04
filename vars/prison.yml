@@ -1,4 +1,4 @@
-# vim: set filetype=yaml:
+# vim: set filetype=yaml.ansible:
 ---
 ssh_chroot_jail_group_name: prison
 ssh_chroot_tmpfiles_conf_path: /etc/tmpfiles.d/prison.conf
