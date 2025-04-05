@@ -2,8 +2,8 @@
 ---
 ssh_chroot_jail_group_name: prison
 ssh_chroot_tmpfiles_conf_path: /etc/tmpfiles.d/prison.conf
-ssh_chroot_jail_usrs:
-  - name:
-    groups: prison
-    home: /home/
-    shell: /bin/bash
+ssh_chroot_jail_users: []
+  # - name:
+  #   groups: prison
+  #   home: /home/
+  #   shell: /bin/bash
